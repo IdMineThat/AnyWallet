@@ -90,64 +90,10 @@ print("The Bitcoin Private Key Byte in Decimal = 128, in Hexadecimal = 80")
 print("")
 
 nvb = str(input("Enter The Network Version Byte in hexadecimal format (example Bitcoin = 00): "))
-##print(nvb)
+theVersionByte = (bytes.fromhex(nvb))
 
-tempVersionByte = '\x00'
-print("+ start" + tempVersionByte + "end")
-print(", start", tempVersionByte, "end")
-theVersionByte = bytes(tempVersionByte, encoding= 'utf-8')
-print(theVersionByte)
-
-print ("")
-
-tempint1 = 0
-tempint2 = 0
-
-if ord(nvb[0]) < 58:
-    tempint1 = ord(nvb[0]) - 48
-elif ord(nvb[0]) > 96:
-    tempint1 = ord(nvb[0]) - 87
-
-if ord(nvb[1]) < 58:
-    tempint2 = ord(nvb[1]) - 48
-elif ord(nvb[1]) > 96:
-    tempint2 = ord(nvb[1]) - 87
-
-nextempVersionByte = chr((16 * tempint1) + tempint2)
-    
-
-#tvb = "\\x" + nvb
-#nextempVersionByte = tvb[-4:]
-#print (nextempVersionByte)
-
-#####nextempVersionByte = str('\\') + "x" + str(nvb)
-##nextempVersionByte = nvb
-print ("+ start" + nextempVersionByte + "end")
-print (", start", nextempVersionByte, "end")
-theVersionByte = bytes(nextempVersionByte, encoding= 'utf-8')
-#theVersionByte = nvb
-print (theVersionByte)
-
-#####test = "\\"
-#####print(test)
-#####test = '\X'
-#####tempVersionByte = test + nvb
-#####print (bytes(nvb, encoding= 'utf-8'))
-#theVersionByte = b'\\x'+nvb
-#print (tempVersionByte)
-#tempVersionByte = tempVersionByte[-4]
-#print (tempVersionByte)
-#tempVersionByte = '\x00'
-#print("yo ", tempVersionByte)
-###################theVersionByte = bytes(tempVersionByte, encoding= 'utf-8')
-print(theVersionByte)
-
-###pkb = input("Enter The Private Key Byte in hexadecimal format (example Bitcoin = 80): ")
-###tempWifcVersionByte = '\\x'+ pkb
-fuckWifcVersionByte = '\x80'
-print(fuckWifcVersionByte)
-theWifcVersionByte = bytes(fuckWifcVersionByte, encoding= 'utf-8')
-print(theWifcVersionByte)
+pkb = str(input("Enter The Private Key Byte in hexadecimal format (example Bitcoin = 80): "))
+theWifcVersionByte = (bytes.fromhex(pkb))
 
 balance = 0
 while balance == 0:
